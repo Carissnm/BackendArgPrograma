@@ -71,7 +71,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<JwtDto> login(@Valid @RequestBody UserLogin userLogin, BindingResult bindingResult){
+    public ResponseEntity<?> login(@Valid @RequestBody UserLogin userLogin, BindingResult bindingResult){
         if(bindingResult.hasErrors())
             return new ResponseEntity(new Mensaje("Campos mal ingresados"), HttpStatus.BAD_REQUEST);
         Authentication authentication =
