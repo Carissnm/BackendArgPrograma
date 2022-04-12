@@ -26,9 +26,10 @@ import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
 
+
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/auth/")
-@CrossOrigin(origins = "*")
 public class UserController {
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -44,6 +45,7 @@ public class UserController {
 
     @Autowired
     JwtProvider jwtProvider;
+
 
     @PostMapping("/nuevo")
     public ResponseEntity<?> nuevo(@Valid @RequestBody NewUser newUser, BindingResult bindingResult){
