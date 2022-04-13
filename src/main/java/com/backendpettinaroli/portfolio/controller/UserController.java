@@ -1,4 +1,4 @@
-package com.backendpettinaroli.portfolio;
+package com.backendpettinaroli.portfolio.controller;
 
 import com.backendpettinaroli.portfolio.dto.Mensaje;
 import com.backendpettinaroli.portfolio.security.dto.JwtDto;
