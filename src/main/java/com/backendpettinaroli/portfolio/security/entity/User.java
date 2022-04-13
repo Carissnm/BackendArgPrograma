@@ -32,7 +32,6 @@ public class User {
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
-        this.roles = roles;
     }
 
     public Long getId() {

@@ -14,12 +14,10 @@ public class Role {
     @Enumerated(EnumType.STRING)
     private RoleNombre roleNombre;
 
-    public Role(RoleNombre roleUser) {
-    }
+    public Role(){}
 
-    public Role(Long id, RoleNombre roleNombre) {
-        this.id = id;
-        this.roleNombre = roleNombre;
+    public Role(@NotNull RoleNombre roleUser) {
+        this.roleNombre = roleUser;
     }
 
     public Long getId() {
