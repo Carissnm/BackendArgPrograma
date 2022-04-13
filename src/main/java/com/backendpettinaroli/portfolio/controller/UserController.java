@@ -27,7 +27,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/auth/")
 public class UserController {
