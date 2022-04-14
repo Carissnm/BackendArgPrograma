@@ -30,21 +30,21 @@ public class EstudiosController {
         return new ResponseEntity<>(estudio, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    /* @PreAuthorize("hasRole('ADMIN')")*/
     @PostMapping("/add")
     public ResponseEntity<Estudios> addEstudio (@RequestBody Estudios estudio) {
         Estudios newEstudio = estudiosService.addEstudio(estudio);
         return new ResponseEntity<>(newEstudio, HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    /* @PreAuthorize("hasRole('ADMIN')")*/
     @PutMapping("/update")
     public ResponseEntity<Estudios> updateEstudio (@RequestBody Estudios estudio) {
         Estudios updateEstudios = estudiosService.updateEstudios(estudio);
         return new ResponseEntity<>(updateEstudios, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    /* @PreAuthorize("hasRole('ADMIN')")*/
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteEstudio (@PathVariable("id") Long id) {
         estudiosService.deleteEstudios(id);

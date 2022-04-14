@@ -31,21 +31,21 @@ public class SkillsController {
         return new ResponseEntity<>(skills, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    /* @PreAuthorize("hasRole('ADMIN')")*/
     @PostMapping("/add")
     public ResponseEntity<Skills> addSkill (@RequestBody Skills skill) {
         Skills newSkill = skillsService.addSkill(skill);
         return new ResponseEntity<>(newSkill, HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    /* @PreAuthorize("hasRole('ADMIN')")*/
     @PutMapping("/update")
     public ResponseEntity<Skills> updateSkills (@RequestBody Skills skill) {
         Skills updateSkills = skillsService.updateSkills(skill);
         return new ResponseEntity<>(updateSkills, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    /* @PreAuthorize("hasRole('ADMIN')")*/
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteSkill (@PathVariable("id") Long id) {
         skillsService.deleteSkill(id);
