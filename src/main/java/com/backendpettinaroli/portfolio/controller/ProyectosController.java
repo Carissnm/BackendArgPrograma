@@ -3,6 +3,7 @@ package com.backendpettinaroli.portfolio.controller;
 
 import com.backendpettinaroli.portfolio.entity.Proyectos;
 import com.backendpettinaroli.portfolio.service.ProyectosService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -14,11 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/proyectos")
 public class ProyectosController {
-    private final ProyectosService proyectosService;
-
-    public ProyectosController(ProyectosService proyectosService){
-        this.proyectosService = proyectosService;
-    }
+    @Autowired
+    ProyectosService proyectosService;
 
     @GetMapping("/all")
     public ResponseEntity<List<Proyectos>> findAllProyectos() {

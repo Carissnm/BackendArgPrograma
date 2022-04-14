@@ -3,6 +3,7 @@ package com.backendpettinaroli.portfolio.controller;
 
 import com.backendpettinaroli.portfolio.entity.Estudios;
 import com.backendpettinaroli.portfolio.service.EstudiosService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -14,11 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/estudios")
 public class EstudiosController {
-    private final EstudiosService estudiosService;
-
-    public EstudiosController(EstudiosService estudiosService){
-        this.estudiosService = estudiosService;
-    }
+   @Autowired
+   EstudiosService estudiosService;
 
     @GetMapping("/all")
     public ResponseEntity<List<Estudios>> getAllEstudios() {

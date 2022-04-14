@@ -3,6 +3,7 @@ package com.backendpettinaroli.portfolio.controller;
 
 import com.backendpettinaroli.portfolio.entity.Skills;
 import com.backendpettinaroli.portfolio.service.SkillsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -14,11 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/skills")
 public class SkillsController {
-    private final SkillsService skillsService;
 
-    public SkillsController(SkillsService skillsService){
-        this.skillsService = skillsService;
-    }
+    @Autowired
+    SkillsService skillsService;
 
     @GetMapping("/all")
     public ResponseEntity<List<Skills>> findAllSkills() {
